@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 西歐之旅</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TC:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFAF4;
+    --charcoal: #2C2825;
+    --brown: #6B4F3A;
+    --gold: #C9A84C;
+    --dusty-rose: #C4856A;
+    --sage: #7A8C7E;
+    --paris-blue: #2D4A7A;
+    --barcelona-red: #C0392B;
+    --porto-wine: #722F37;
+    --lisbon-teal: #2E7D77;
+    --transit: #5A6472;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–cream);
+color: var(–charcoal);
+font-family: ‘Noto Serif TC’, serif;
+overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+height: 100vh;
+min-height: 600px;
+background: var(–charcoal);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse at 20% 50%, rgba(45,74,122,0.35) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 30%, rgba(201,168,76,0.2) 0%, transparent 50%),
+radial-gradient(ellipse at 60% 80%, rgba(114,47,55,0.25) 0%, transparent 50%);
+}
+
+.hero-ornament {
+position: absolute;
+font-size: 320px;
+color: rgba(255,255,255,0.03);
+font-family: ‘Playfair Display’, serif;
+line-height: 1;
+user-select: none;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+white-space: nowrap;
+}
+
+.hero-eyebrow {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.35em;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 24px;
+opacity: 0;
+animation: fadeUp 1s 0.3s forwards;
+}
+
+.hero-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(48px, 10vw, 120px);
+color: var(–warm-white);
+line-height: 1;
+text-align: center;
+opacity: 0;
+animation: fadeUp 1s 0.5s forwards;
+}
+
+.hero-title em {
+font-style: italic;
+color: var(–gold);
+}
+
+.hero-sub {
+font-family: ‘DM Mono’, monospace;
+font-size: 12px;
+letter-spacing: 0.2em;
+color: rgba(255,255,255,0.45);
+margin-top: 24px;
+opacity: 0;
+animation: fadeUp 1s 0.7s forwards;
+}
+
+.hero-cities {
+display: flex;
+gap: 32px;
+margin-top: 48px;
+opacity: 0;
+animation: fadeUp 1s 0.9s forwards;
+}
+
+.hero-city {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 6px;
+}
+
+.hero-city-dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+}
+
+.hero-city-name {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.2em;
+color: rgba(255,255,255,0.5);
+text-transform: uppercase;
+}
+
+.hero-line {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 1px;
+height: 60px;
+background: linear-gradient(to bottom, transparent, var(–gold));
+opacity: 0;
+animation: fadeIn 1s 1.2s forwards;
+}
+
+/* ── TIMELINE ── */
+.timeline-wrap {
+padding: 80px 24px;
+max-width: 960px;
+margin: 0 auto;
+}
+
+.section-header {
+display: flex;
+align-items: center;
+gap: 20px;
+margin-bottom: 64px;
+}
+
+.section-header h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+color: var(–brown);
+}
+
+.section-header-line {
+flex: 1;
+height: 1px;
+background: linear-gradient(to right, var(–brown), transparent);
+}
+
+/* ── CITY BLOCK ── */
+.city-block {
+margin-bottom: 72px;
+}
+
+.city-header {
+display: flex;
+align-items: flex-end;
+gap: 16px;
+margin-bottom: 32px;
+padding-bottom: 16px;
+border-bottom: 1px solid;
+}
+
+.city-name {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(36px, 8vw, 64px);
+line-height: 1;
+font-weight: 700;
+}
+
+.city-name-zh {
+font-family: ‘Noto Serif TC’, serif;
+font-size: 13px;
+letter-spacing: 0.2em;
+font-weight: 300;
+margin-bottom: 8px;
+}
+
+.city-dates {
+font-family: ‘DM Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.2em;
+margin-bottom: 10px;
+opacity: 0.6;
+}
+
+/* Paris */
+.city-paris .city-header { border-color: rgba(45,74,122,0.3); }
+.city-paris .city-name { color: var(–paris-blue); }
+.city-paris .city-name-zh { color: var(–paris-blue); opacity: 0.7; }
+
+/* Barcelona */
+.city-barcelona .city-header { border-color: rgba(192,57,43,0.3); }
+.city-barcelona .city-name { color: var(–barcelona-red); }
+.city-barcelona .city-name-zh { color: var(–barcelona-red); opacity: 0.7; }
+
+/* Porto */
+.city-porto .city-header { border-color: rgba(114,47,55,0.3); }
+.city-porto .city-name { color: var(–porto-wine); }
+.city-porto .city-name-zh { color: var(–porto-wine); opacity: 0.7; }
+
+/* Lisbon */
+.city-lisbon .city-header { border-color: rgba(46,125,119,0.3); }
+.city-lisbon .city-name { color: var(–lisbon-teal); }
+.city-lisbon .city-name-zh { color: var(–lisbon-teal); opacity: 0.7; }
+
+/* ── DAY CARD ── */
+.days-grid {
+display: grid;
+gap: 16px;
+}
+
+.day-card {
+background: var(–warm-white);
+border-radius: 12px;
+overflow: hidden;
+display: grid;
+grid-template-columns: 72px 1fr;
+min-height: 80px;
+box-shadow: 0 2px 12px rgba(44,40,37,0.06);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.day-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 24px rgba(44,40,37,0.1);
+}
+
+.day-date-col {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 16px 8px;
+gap: 2px;
+}
+
+.day-num {
+font-family: ‘Playfair Display’, serif;
+font-size: 28px;
+font-weight: 700;
+line-height: 1;
+color: var(–warm-white);
+}
+
+.day-month {
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.15em;
+color: rgba(255,255,255,0.7);
+text-transform: uppercase;
+}
+
+.day-weekday {
+font-family: ‘DM Mono’, monospace;
+font-size: 8px;
+letter-spacing: 0.1em;
+color: rgba(255,255,255,0.5);
+text-transform: uppercase;
+margin-top: 4px;
+}
+
+.city-paris .day-date-col { background: var(–paris-blue); }
+.city-barcelona .day-date-col { background: var(–barcelona-red); }
+.city-porto .day-date-col { background: var(–porto-wine); }
+.city-lisbon .day-date-col { background: var(–lisbon-teal); }
+
+.day-content {
+padding: 14px 18px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.day-items {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.day-item {
+display: flex;
+align-items: flex-start;
+gap: 10px;
+font-size: 13px;
+line-height: 1.5;
+}
+
+.day-item-time {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: #999;
+min-width: 38px;
+padding-top: 2px;
+letter-spacing: 0.05em;
+}
+
+.day-item-text {
+color: var(–charcoal);
+font-weight: 400;
+}
+
+.tag {
+display: inline-block;
+font-family: ‘DM Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.1em;
+padding: 2px 7px;
+border-radius: 3px;
+text-transform: uppercase;
+margin-left: 6px;
+vertical-align: middle;
+}
+
+.tag-food { background: #FFF0E8; color: #C06030; }
+.tag-sight { background: #E8EFF8; color: #2D5A8A; }
+.tag-shop { background: #F0EFE8; color: #6B5A30; }
+.tag-transit { background: #EAEAEA; color: #555; }
+.tag-suggest { background: #E8F5E8; color: #3A7A3A; }
+.tag-bar { background: #1C1C2E; color: #B8A0D8; }
+
+/* ── TRANSIT CARD ── */
+.transit-card {
+background: var(–charcoal);
+border-radius: 12px;
+padding: 18px 22px;
+display: flex;
+align-items: center;
+gap: 16px;
+margin: 8px 0;
+color: var(–warm-white);
+}
+
+.transit-icon {
+font-size: 22px;
+opacity: 0.8;
+}
+
+.transit-info {
+flex: 1;
+}
+
+.transit-route {
+font-family: ‘Playfair Display’, serif;
+font-size: 16px;
+font-weight: 700;
+letter-spacing: 0.05em;
+}
+
+.transit-detail {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+color: rgba(255,255,255,0.5);
+letter-spacing: 0.1em;
+margin-top: 4px;
+}
+
+.transit-time {
+font-family: ‘DM Mono’, monospace;
+font-size: 14px;
+color: var(–gold);
+text-align: right;
+}
+
+/* ── CHECKLIST SECTION ── */
+.checklist-section {
+background: var(–charcoal);
+padding: 64px 24px;
+color: var(–warm-white);
+}
+
+.checklist-inner {
+max-width: 960px;
+margin: 0 auto;
+}
+
+.checklist-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 32px;
+margin-bottom: 40px;
+color: var(–gold);
+}
+
+.checklist-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 32px;
+}
+
+.checklist-col h4 {
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.3em;
+color: rgba(255,255,255,0.4);
+text-transform: uppercase;
+margin-bottom: 14px;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+padding-bottom: 10px;
+}
+
+.checklist-item {
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 7px 0;
+font-size: 13px;
+font-weight: 300;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.checklist-item::before {
+content: ‘○’;
+color: var(–gold);
+font-size: 12px;
+flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+text-align: center;
+padding: 40px;
+font-family: ‘DM Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.2em;
+color: rgba(44,40,37,0.3);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+.day-card { grid-template-columns: 58px 1fr; }
+.day-num { font-size: 22px; }
+.hero-cities { gap: 20px; flex-wrap: wrap; justify-content: center; }
+.transit-card { flex-direction: column; gap: 10px; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ornament">W</div>
+  <p class="hero-eyebrow">2026 · September</p>
+  <h1 class="hero-title">西歐<em>之旅</em></h1>
+  <p class="hero-sub">Paris · Barcelona · Porto · Lisboa</p>
+  <div class="hero-cities">
+    <div class="hero-city">
+      <div class="hero-city-dot" style="background:var(--paris-blue)"></div>
+      <span class="hero-city-name">Paris</span>
+    </div>
+    <div class="hero-city">
+      <div class="hero-city-dot" style="background:var(--barcelona-red)"></div>
+      <span class="hero-city-name">Barcelona</span>
+    </div>
+    <div class="hero-city">
+      <div class="hero-city-dot" style="background:var(--porto-wine)"></div>
+      <span class="hero-city-name">Porto</span>
+    </div>
+    <div class="hero-city">
+      <div class="hero-city-dot" style="background:var(--lisbon-teal)"></div>
+      <span class="hero-city-name">Lisboa</span>
+    </div>
+  </div>
+  <div class="hero-line"></div>
+</div>
+
+<!-- MAIN TIMELINE -->
+
+<div class="timeline-wrap">
+
+  <div class="section-header">
+    <h2>行程總覽</h2>
+    <div class="section-header-line"></div>
+  </div>
+
+  <!-- ── 出發 9/8 ── -->
+
+  <div style="margin-bottom: 48px;">
+    <div class="transit-card">
+      <div class="transit-icon">✈️</div>
+      <div class="transit-info">
+        <div class="transit-route">TPE → HKG → CDG</div>
+        <div class="transit-detail">
+          🕙 <strong style="color:var(--gold)">10:00 桃園機場 T2 報到</strong>（最後報到時間前預留充裕時間）<br>
+          BR869 · TPE 12:40 → HKG 14:25 · 長榮航空 EVA Air<br>
+          HKG 轉機 → CDG · 芬蘭航空 Finnair AY · HKG 20:55 出發 → 翌日 CDG 抵達
+        </div>
+      </div>
+      <div class="transit-time">9/8<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">出發日</span></div>
+    </div>
+  </div>
+
+  <!-- ══ PARIS ══ -->
+
+  <div class="city-block city-paris">
+    <div class="city-header">
+      <div>
+        <div class="city-dates">9/9 — 9/13 · 4 nights</div>
+        <div class="city-name-zh">巴黎</div>
+        <div class="city-name">Paris</div>
+      </div>
+    </div>
+    <div class="days-grid">
+
+```
+  <!-- 9/9 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">9</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Wed</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">全天</span>
+          <span class="day-item-text">抵達 CDG，辦理入住，休息調時差</span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">13:00</span>
+          <span class="day-item-text">Restaurant Georgette <span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:00</span>
+          <span class="day-item-text">Le Bon Marché <span class="tag tag-shop">購物</span><span class="tag tag-sight">景點</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/10 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">10</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Thu</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">10:00</span>
+          <span class="day-item-text">巴士底市集 Marché de la Bastille <span class="tag tag-sight">景點</span><span class="tag tag-food">飲食</span><span class="tag tag-shop">購物</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">12:00</span>
+          <span class="day-item-text">Chez Janou <span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:00</span>
+          <span class="day-item-text">瑪黑區散步 · 精品小店探索 <span class="tag tag-shop">購物</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">18:00</span>
+          <span class="day-item-text">Comptoir de la Gastronomie <span class="tag tag-food">飲食</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/11 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">11</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Fri</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">12:00</span>
+          <span class="day-item-text">Bustronome Paris 城市之旅 <span class="tag tag-food">飲食</span><span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">15:00</span>
+          <span class="day-item-text">Av. des Champs-Élysées <span class="tag tag-sight">景點</span><span class="tag tag-shop">購物</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/12 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">12</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Sat</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">12:00</span>
+          <span class="day-item-text">聖徒禮拜堂 Sainte-Chapelle <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">12:00</span>
+          <span class="day-item-text">塞納河遊船午餐 <span class="tag tag-food">飲食</span><span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">15:00</span>
+          <span class="day-item-text">羅浮宮周邊漫步 <span class="tag tag-sight">景點</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- 交通：巴黎 → 巴塞隆納 -->
+
+  <div style="margin: 16px 0 48px;">
+    <div class="transit-card">
+      <div class="transit-icon">🚄</div>
+      <div class="transit-info">
+        <div class="transit-route">Paris → Barcelona</div>
+        <div class="transit-detail">Paris Gare de Lyon → Barcelone Sants · 07:42 出發 · 8 passengers</div>
+      </div>
+      <div class="transit-time">9/13<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">週日</span></div>
+    </div>
+  </div>
+
+  <!-- ══ BARCELONA ══ -->
+
+  <div class="city-block city-barcelona">
+    <div class="city-header">
+      <div>
+        <div class="city-dates">9/13 — 9/17 · 4 nights</div>
+        <div class="city-name-zh">巴塞隆納</div>
+        <div class="city-name">Barcelona</div>
+      </div>
+    </div>
+    <div class="days-grid">
+
+```
+  <!-- 9/13 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">13</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Sun</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">07:42</span>
+          <span class="day-item-text">高鐵出發 巴黎→巴塞隆納 <span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">17:00</span>
+          <span class="day-item-text">巴特略之家 Casa Batlló <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">20:00</span>
+          <span class="day-item-text">蘭布拉大道夜間漫步 <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">23:00</span>
+          <span class="day-item-text">Sips Barcelona（世界50大酒吧 No.3）<span class="tag tag-bar">酒吧</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/14 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">14</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Mon</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">聖家堂 Basílica de la Sagrada Família <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">13:00</span>
+          <span class="day-item-text">Herboristeria del Rei <span class="tag tag-shop">購物</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">15:00</span>
+          <span class="day-item-text">桂爾公園 Parc Güell <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">23:00</span>
+          <span class="day-item-text">Steam City Cocktail Bar by COBA <span class="tag tag-bar">酒吧</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/15 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">15</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Tue</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:30</span>
+          <span class="day-item-text">Brunch & Cake <span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">11:00</span>
+          <span class="day-item-text">哥德區 Barri Gòtic 探索 <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">19:30</span>
+          <span class="day-item-text">Tapeo <span class="tag tag-food">飲食</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/16 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">16</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Wed</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">波蓋利亞市場 La Boqueria <span class="tag tag-sight">景點</span><span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">12:30</span>
+          <span class="day-item-text">La Caravana <span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">15:00</span>
+          <span class="day-item-text">VOM FASS BARCELONA <span class="tag tag-shop">購物</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">18:00</span>
+          <span class="day-item-text">米拉之家 Casa Milà 外觀 <span class="tag tag-sight">景點</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- 交通：巴塞隆納 → 波多 -->
+
+  <div style="margin: 16px 0 48px;">
+    <div class="transit-card">
+      <div class="transit-icon">✈️</div>
+      <div class="transit-info">
+        <div class="transit-route">BCN → OPO</div>
+        <div class="transit-detail">Vueling VY8478 · Barcelona → Porto · 15:10 → 16:10</div>
+      </div>
+      <div class="transit-time">9/17<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">週四</span></div>
+    </div>
+  </div>
+
+  <!-- ══ PORTO ══ -->
+
+  <div class="city-block city-porto">
+    <div class="city-header">
+      <div>
+        <div class="city-dates">9/17 — 9/20 · 3 nights</div>
+        <div class="city-name-zh">波多</div>
+        <div class="city-name">Porto</div>
+      </div>
+    </div>
+    <div class="days-grid">
+
+```
+  <!-- 9/17 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">17</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Thu</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">16:10</span>
+          <span class="day-item-text">抵達波多 OPO，辦理入住 <span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">18:00</span>
+          <span class="day-item-text">利貝爾達德廣場 Praça da Liberdade 散步 <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">19:30</span>
+          <span class="day-item-text">Taberna dos Fardos 晚餐（傳統葡式料理）<span class="tag tag-food">飲食</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/18 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">18</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Fri</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">萊羅書店 Livraria Lello（哈利波特靈感書店）<span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">10:30</span>
+          <span class="day-item-text">教士塔 Torre dos Clérigos 登頂俯瞰全城 <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">12:30</span>
+          <span class="day-item-text">Cantina 32 午餐 <span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:30</span>
+          <span class="day-item-text">加亞新城 Vila Nova de Gaia 波特酒窖參觀 <span class="tag tag-sight">景點</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">17:00</span>
+          <span class="day-item-text">路易一世橋 Ponte Luís I 黃昏散步 <span class="tag tag-sight">景點</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/19 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">19</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Sat</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">波多主教堂 Sé do Porto <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">10:30</span>
+          <span class="day-item-text">聖本篤車站 Estação de São Bento（藍瓷磚壁畫）<span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">12:00</span>
+          <span class="day-item-text">Mercado do Bolhão 傳統市場午餐 <span class="tag tag-food">飲食</span><span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:00</span>
+          <span class="day-item-text">里貝拉區 Ribeira 沿河漫步 <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">19:00</span>
+          <span class="day-item-text">DOP 主廚餐廳晚餐 <span class="tag tag-food">飲食</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- 交通：波多 → 里斯本（包車路線） -->
+
+  <div style="margin: 16px 0 8px;">
+    <div class="transit-card">
+      <div class="transit-icon">🚗</div>
+      <div class="transit-info">
+        <div class="transit-route">Porto → Lisboa</div>
+        <div class="transit-detail">包車沿途 · 巴塔利亞修道院 + 阿爾科巴薩修道院 · 全程約 8.5 小時</div>
+      </div>
+      <div class="transit-time">9/20<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">週日</span></div>
+    </div>
+  </div>
+
+  <!-- ══ LISBON ══ -->
+
+  <div class="city-block city-lisbon">
+    <div class="city-header">
+      <div>
+        <div class="city-dates">9/20 — 9/23 · 3 nights</div>
+        <div class="city-name-zh">里斯本</div>
+        <div class="city-name">Lisboa</div>
+      </div>
+    </div>
+    <div class="days-grid">
+
+```
+  <!-- 9/20 包車日 -->
+  <div class="day-card" style="grid-template-columns: 72px 1fr;">
+    <div class="day-date-col" style="background: linear-gradient(160deg, var(--porto-wine) 0%, var(--lisbon-teal) 100%);">
+      <span class="day-num">20</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Sun</span>
+    </div>
+    <div class="day-content">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; color:#999; text-transform:uppercase; margin-bottom:4px;">波多 → 里斯本 包車路線</div>
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">從波多出發 🚗 <span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">11:00</span>
+          <span class="day-item-text">巴塔利亞修道院 Mosteiro da Batalha — 哥德式建築精華，慢慢細看 <span class="tag tag-sight">景點</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">13:00</span>
+          <span class="day-item-text">巴塔利亞附近簡單午餐（建議嘗試當地小館）<span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:00</span>
+          <span class="day-item-text">阿爾科巴薩修道院 Mosteiro de Alcobaça — 葡萄牙最大修道院，廣場喝咖啡 <span class="tag tag-sight">景點</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">15:30</span>
+          <span class="day-item-text">啟程前往里斯本 🚗 <span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">17:30</span>
+          <span class="day-item-text">抵達里斯本，辦理入住，避開下班尖峰 <span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">19:30</span>
+          <span class="day-item-text">Zé da Mouraria 葡式傳統料理晚餐 <span class="tag tag-food">飲食</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/21 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">21</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Mon</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">貝倫塔 Torre de Belém + 航海紀念碑 <span class="tag tag-sight">景點</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">11:00</span>
+          <span class="day-item-text">傑羅尼莫斯修道院 Mosteiro dos Jerónimos <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">13:00</span>
+          <span class="day-item-text">Pastéis de Belém（葡式蛋塔發源地）<span class="tag tag-food">飲食</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">15:00</span>
+          <span class="day-item-text">LX Factory 文創市集 <span class="tag tag-shop">購物</span><span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">19:00</span>
+          <span class="day-item-text">Time Out Market Lisboa <span class="tag tag-food">飲食</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/22 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">22</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Tue</span>
+    </div>
+    <div class="day-content">
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:30</span>
+          <span class="day-item-text">辛特拉 Sintra 一日小旅行 <span class="tag tag-sight">景點</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">10:00</span>
+          <span class="day-item-text">彩色宮殿 Palácio da Pena <span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">12:30</span>
+          <span class="day-item-text">辛特拉老城午餐 <span class="tag tag-food">飲食</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:00</span>
+          <span class="day-item-text">羅卡角 Cabo da Roca（歐洲大陸最西端）<span class="tag tag-sight">景點</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">19:30</span>
+          <span class="day-item-text">Tasca do Chico 現場法朵音樂 Fado <span class="tag tag-food">飲食</span><span class="tag tag-suggest">推薦</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9/23 返台日 -->
+  <div class="day-card">
+    <div class="day-date-col">
+      <span class="day-num">23</span>
+      <span class="day-month">Sep</span>
+      <span class="day-weekday">Wed</span>
+    </div>
+    <div class="day-content">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.2em; color:#999; text-transform:uppercase; margin-bottom:4px;">返台日 · 里斯本出發</div>
+      <div class="day-items">
+        <div class="day-item">
+          <span class="day-item-time">09:00</span>
+          <span class="day-item-text">早餐 + 最後購物 / 行李整理</span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">13:30</span>
+          <span class="day-item-text">⚠️ 退房、前往里斯本機場 LIS <span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">14:00</span>
+          <span class="day-item-text">🛫 機場報到、過安檢（建議 2.5 小時前到）<span class="tag tag-transit">交通</span></span>
+        </div>
+        <div class="day-item">
+          <span class="day-item-time">16:35</span>
+          <span class="day-item-text">AY1740 LIS 出發 → HEL 赫爾辛基 23:10 抵達 <span class="tag tag-transit">交通</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- 跨夜轉機 HEL → HKG → TPE -->
+
+  <div style="margin: 16px 0 64px; display:flex; flex-direction:column; gap:12px;">
+    <div class="transit-card">
+      <div class="transit-icon">🌙</div>
+      <div class="transit-info">
+        <div class="transit-route">HEL → HKG</div>
+        <div class="transit-detail">
+          芬蘭航空 AY0099 · 赫爾辛基出發 <strong style="color:var(--gold)">00:35（9/24 跨夜）</strong><br>
+          香港 HKG 17:40 抵達 · 在 HKG 候機約 6.5 小時
+        </div>
+      </div>
+      <div class="transit-time">9/23–24<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">跨夜航班</span></div>
+    </div>
+    <div class="transit-card">
+      <div class="transit-icon">✈️</div>
+      <div class="transit-info">
+        <div class="transit-route">HKG → TPE 🏠</div>
+        <div class="transit-detail">
+          長榮航空 BR858 · HKG T1 出發 <strong style="color:var(--gold)">21:05</strong><br>
+          桃園 TPE T2 抵達 <strong style="color:var(--gold)">22:50</strong> · 到家！
+        </div>
+      </div>
+      <div class="transit-time">9/24<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">返台</span></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CHECKLIST -->
+
+<div class="checklist-section">
+  <div class="checklist-inner">
+    <div class="checklist-title">待辦事項 Checklist</div>
+    <div class="checklist-grid">
+      <div class="checklist-col">
+        <h4>證件 &amp; 金融</h4>
+        <div class="checklist-item">護照（有效至 2027/4 以後）</div>
+        <div class="checklist-item">機票印出 + 截圖存手機</div>
+        <div class="checklist-item">信用卡開通海外刷卡</div>
+        <div class="checklist-item">兌換至少 600 歐元現金</div>
+      </div>
+      <div class="checklist-col">
+        <h4>裝備 &amp; 保險</h4>
+        <div class="checklist-item">AirTag 放行李箱</div>
+        <div class="checklist-item">旅平險 + 海外突發疾病險</div>
+        <div class="checklist-item">網卡 / eSIM 開通</div>
+        <div class="checklist-item">充電器 + 行動電源</div>
+      </div>
+      <div class="checklist-col">
+        <h4>隨身必備</h4>
+        <div class="checklist-item">護照正本 + 影本</div>
+        <div class="checklist-item">錢包、信用卡、現金</div>
+        <div class="checklist-item">防盜繩 + AirTag</div>
+        <div class="checklist-item">太陽眼鏡、小雨傘</div>
+      </div>
+      <div class="checklist-col">
+        <h4>健康 &amp; 生活</h4>
+        <div class="checklist-item">常備藥品</div>
+        <div class="checklist-item">人工淚液</div>
+        <div class="checklist-item">護手霜</div>
+        <div class="checklist-item">個人衛生用品</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  2026 西歐之旅 · Paris · Barcelona · Porto · Lisboa · 9/8 — 9/24
+</footer>
+
+</body>
+</html>
