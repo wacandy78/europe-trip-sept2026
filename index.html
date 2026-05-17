@@ -67,7 +67,7 @@
 
   .hero-eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.35em;
     color: var(--gold);
     text-transform: uppercase;
@@ -93,7 +93,7 @@
 
   .hero-sub {
     font-family: 'DM Mono', monospace;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 0.2em;
     color: rgba(255,255,255,0.45);
     margin-top: 24px;
@@ -124,7 +124,7 @@
 
   .hero-city-name {
     font-family: 'DM Mono', monospace;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.2em;
     color: rgba(255,255,255,0.5);
     text-transform: uppercase;
@@ -158,7 +158,7 @@
 
   .section-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -194,7 +194,7 @@
 
   .city-name-zh {
     font-family: 'Noto Serif TC', serif;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 0.2em;
     font-weight: 300;
     margin-bottom: 8px;
@@ -202,7 +202,7 @@
 
   .city-dates {
     font-family: 'DM Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.2em;
     margin-bottom: 10px;
     opacity: 0.6;
@@ -269,7 +269,7 @@
 
   .day-month {
     font-family: 'DM Mono', monospace;
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 0.15em;
     color: rgba(255,255,255,0.7);
     text-transform: uppercase;
@@ -277,7 +277,7 @@
 
   .day-weekday {
     font-family: 'DM Mono', monospace;
-    font-size: 12px;
+    font-size: 9px;
     letter-spacing: 0.1em;
     color: rgba(255,255,255,0.5);
     text-transform: uppercase;
@@ -312,7 +312,7 @@
 
   .day-item-time {
     font-family: 'DM Mono', monospace;
-    font-size: 14px;
+    font-size: 11px;
     color: #999;
     min-width: 38px;
     padding-top: 2px;
@@ -327,7 +327,7 @@
   .tag {
     display: inline-block;
     font-family: 'DM Mono', monospace;
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 0.1em;
     padding: 2px 7px;
     border-radius: 3px;
@@ -373,7 +373,7 @@
 
   .transit-detail {
     font-family: 'DM Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(255,255,255,0.5);
     letter-spacing: 0.1em;
     margin-top: 4px;
@@ -413,7 +413,7 @@
 
   .checklist-col h4 {
     font-family: 'DM Mono', monospace;
-    font-size: 16px;
+    font-size: 12px;
     letter-spacing: 0.3em;
     color: rgba(255,255,255,0.4);
     text-transform: uppercase;
@@ -427,7 +427,7 @@
     align-items: center;
     gap: 10px;
     padding: 7px 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 300;
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
@@ -638,11 +638,10 @@
     <div class="transit-card">
       <div class="transit-icon">🚄</div>
       <div class="transit-info">
-        <div class="transit-route">Paris → Barcelona</div>
-        <div class="transit-detail">Paris Gare de Lyon → Barcelone Sants · 07:42 出發</div>
-      </div>
-      <div class="transit-time">9/13<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">週日</span></div>
-    </div>
+        <div class="transit-detail">
+          🕙 <strong style="color:var(--gold)">9/13出發日 · 07:42<br/>
+            Paris Gare de Lyon → Barcelone Sants</strong><br>
+        </div>
   </div>
 
   <!-- ══ BARCELONA ══ -->
@@ -863,13 +862,14 @@
   <!-- 交通：波多 → 里斯本（包車路線） -->
   <div style="margin: 16px 0 8px;">
     <div class="transit-card">
-      <div class="transit-icon">🚗</div>
+      <div class="transit-icon">🚐</div>
       <div class="transit-info">
         <div class="transit-route">Porto → Lisboa</div>
-        <div class="transit-detail">包車沿途 · 巴塔利亞修道院 + 阿爾科巴薩修道院 · 全程約 8.5 小時</div>
-      </div>
-      <div class="transit-time">9/20<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">週日</span></div>
+        <div class="transit-time">9/20<br><span style="font-size:11px;color:rgba(255,255,255,0.4)">週日</span></div>
     </div>
+        <div class="transit-detail">包車 · 全程約 8.5 小時 · <br/>
+          巴塔利亞修道院 + 阿爾科巴薩修道院<br/>
+        </div>
   </div>
 
   <!-- ══ LISBON ══ -->
